@@ -31,6 +31,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/* /root/.cache
 
 COPY contrib/root /
+RUN chmod a+x /usr/share/scripts/patroni/health_check.sh
 RUN chmod a+x /usr/share/scripts/patroni/post_init.sh
 
 VOLUME /home/postgres/pgdata
